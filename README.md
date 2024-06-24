@@ -27,7 +27,7 @@ This project is based on the popular Christmas game __Secret Santa__ where frien
 Secret Santa Generator is a Spring Boot application built using Maven. You can build a jar file and run it from the command line:
 
 ```
-git clone https://github.com/NotTheBest/secretsanta-generator.git
+git clone https://github.com/silviojpa/secretsanta-generator.git
 cd secretsanta-generator
 ./mvnw package
 java -jar target/*.jar
