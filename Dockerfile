@@ -1,11 +1,11 @@
-FROM ubuntu:latest
+FROM openjdk:8u151-jdk-alpine3.7
   
 EXPOSE 8080
  
-ENV MY_VARIABLE=my_value
+ENV APP_HOME /usr/src/app
 
 COPY target/secretsanta-0.0.1-SNAPSHOT.jar $APP_HOME/app.jar
 
 WORKDIR $APP_HOME
 
-ENTRYPOINT ["/bin/sh", "-c", "exec /path/to/entrypoint.sh"]
+ENTRYPOINT exec java -jar app.jar 
