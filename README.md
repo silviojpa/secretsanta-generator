@@ -1,4 +1,53 @@
 # Secret Santa Generator Application :santa:
+
+O que o pipeline faz?
+
+Este pipeline Jenkins automatiza o processo de desenvolvimento, teste e implantação de uma aplicação Java. Ele executa uma série de tarefas em sequência, desde a obtenção do código-fonte até a implantação da aplicação em um container Docker.
+Detalhamento das etapas:
+
+    Checkout Git:
+        O que faz: Baixa o código-fonte mais recente do repositório Git especificado (no caso, o repositório secretsanta-generator no GitHub).
+        Por que: Garante que a versão mais atual do código está sendo utilizada para as próximas etapas.
+
+    Compilação:
+        O que faz: Compila o código-fonte Java em bytecode (código intermediário que a Máquina Virtual Java pode executar).
+        Por que: Prepara o código para ser executado e analisado por outras ferramentas.
+
+    Análise SonarQube:
+        O que faz: Analisa o código em busca de possíveis problemas de qualidade, como bugs, vulnerabilidades e violações de regras de codificação.
+        Por que: Ajuda a garantir a qualidade do código e a identificar áreas que precisam de melhoria.
+
+    Verificação de Dependências OWASP:
+        O que faz: Verifica as dependências do projeto (bibliotecas, frameworks, etc.) em busca de vulnerabilidades conhecidas.
+        Por que: Ajuda a proteger a aplicação contra ataques explorando vulnerabilidades em componentes de terceiros.
+
+    Build:
+        O que faz: Cria um artefato executável (como um JAR) a partir do código compilado e suas dependências.
+        Por que: Prepara a aplicação para ser empacotada e distribuída.
+
+    Build e Push de Docker:
+        O que faz: Cria uma imagem Docker a partir do artefato executável e envia essa imagem para um registro Docker.
+        Por que: Empacota a aplicação em um container leve e portável, facilitando a distribuição e a execução em diferentes ambientes.
+
+    Deploy para Container:
+        O que faz: Inicia um container Docker a partir da imagem criada anteriormente e o configura para executar a aplicação.
+        Por que: Implanta a aplicação em um ambiente de execução isolado e gerenciado pelo Docker.
+
+Conceitos-chave:
+
+    Jenkins: Ferramenta de automação de construção e implantação de software.
+    Pipeline: Conjunto de etapas definidas para automatizar um processo.
+    Git: Sistema de controle de versão.
+    Maven: Ferramenta de gerenciamento de projetos Java.
+    SonarQube: Plataforma de análise de código estático.
+    OWASP Dependency Check: Ferramenta para verificar vulnerabilidades em dependências.
+    Docker: Plataforma para criar e executar containers.
+
+Em resumo:
+
+Este pipeline Jenkins automatiza todo o processo de desenvolvimento, desde o código até a implantação em produção, garantindo qualidade, segurança e consistência nas entregas.
+
+Gostaria de saber mais sobre algum ponto específico? Posso fornecer explicações mais detalhadas sobre conceitos como Docker, Jenkinsfile, ou sobre alguma etapa específica do pipeline.
   
 A __secret santa generator web application__ built using __Spring Boot technologies__, __Thymeleaf views__, __JPA__, __H2 Database__, and more. The project features Spring Model, View, and Controller (MVC) architecture and Service and Repository layers.
 
